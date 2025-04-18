@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Data</title>
+</head>
+<body>
+  <h1>Married and Army Service Employees</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Marital Status</th>
+        <th>Army Service</th>
+      </tr>
+    </thead>
+    <tbody id="employeeTable">
+    </tbody>
+  </table>
+
+  <script>
+    const employees = [
+      { firstName: "Anna", lastName: "Petrosyan", married: true, armyService: false },
+      { firstName: "Karen", lastName: "Khachatryan", married: true, armyService: true },
+      { firstName: "Melanya", lastName: "Babayan", married: false, armyService: false },
+      { firstName: "Sargis", lastName: "Avetisyan", married: true, armyService: true },
+    ];
+
+    function filterAndDisplayEmployees() {
+      const eligibleEmployees = employees.filter(emp => emp.married && emp.armyService);
+      const tableBody = document.getElementById('employeeTable');
+
+      eligibleEmployees.forEach(emp => {
+        const row = `<tr>
+          <td>${emp.firstName}</td>
+          <td>${emp.lastName}</td>
+          <td>${emp.married ? 'Yes' : 'No'}</td>
+          <td>${emp.armyService ? 'Yes' : 'No'}</td>
+        </tr>`;
+        tableBody.innerHTML += row;
+      });
+    }
+
+    filterAndDisplayEmployees();
+  </script>
+</body>
+</html>

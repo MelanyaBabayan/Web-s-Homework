@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Visitors</title>
+</head>
+<body>
+  <h1>Most Frequent Visitors</h1>
+  <p>Top Visitor: <span id="topVisitor"></span></p>
+
+  <script>
+    const users = [
+      { firstName: "Melanya", lastName: "Babayan", visits: 10 },
+      { firstName: "Karen", lastName: "Petrosyan", visits: 15 },
+      { firstName: "Lilit", lastName: "Senoyan", visits: 7 },
+    ];
+
+    function findTopVisitor() {
+      const topUser = users.reduce((max, user) => user.visits > max.visits ? user : max, users[0]);
+      document.getElementById('topVisitor').textContent = `${topUser.firstName} ${topUser.lastName}`;
+    }
+
+    setTimeout(findTopVisitor, 5000); // 5 վայրկյան սպասել
+  </script>
+</body>
+</html>

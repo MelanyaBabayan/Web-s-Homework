@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate ID Object</title>
+</head>
+<body>
+  <h1>Generate IDs for Users</h1>
+  <p>The result will be logged to the console.</p>
+
+    <script>
+    const users = [
+      { name: "Melanya", lastName: "Babayan" },
+      { name: "Karen", lastName: "Petrosyan" },
+      { name: "Artyom", lastName: "Hayrapetyan" },
+    ];
+
+    const generateIdObject = () => {
+      let idObjects = [];
+      users.forEach((user, index) => {
+        idObjects.push({ id: `user${index + 1}`, ...user });
+      });
+      console.log(idObjects);
+    };
+
+    generateIdObject();
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ends with 'yan'</title>
+</head>
+<body>
+  <h1>Check Word Ending</h1>
+  <input type="text" id="wordToCheck" placeholder="Enter a word" />
+  <button onclick="checkEndsWithYan()">Check</button>
+  <p>Ends with 'yan': <span id="checkResult"></span></p>
+
+  <script>
+    function checkEndsWithYan() {
+      const word = document.getElementById('wordToCheck').value;
+      const result = word.endsWith('yan');
+      document.getElementById('checkResult').textContent = result ? 'True' : 'False';
+    }
+  </script>
+</body>
+</html>

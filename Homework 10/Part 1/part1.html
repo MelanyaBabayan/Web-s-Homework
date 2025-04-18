@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extract Link Name</title>
+</head>
+<body>
+  <h1>Extract Link Name</h1>
+  <input type="text" id="linkInput" placeholder="Enter a link" />
+  <button onclick="extractLinkName()">Extract Name</button>
+  <p>Link Name: <span id="linkName"></span></p>
+
+  <script>
+    function extractLinkName() {
+      const link = document.getElementById('linkInput').value;
+      const name = link.split('/').filter(part => part).pop(); // Վերջին ոչ դատարկ մասի առանձնացում
+      document.getElementById('linkName').textContent = name || 'Invalid Link';
+    }
+  </script>
+</body>
+</html>

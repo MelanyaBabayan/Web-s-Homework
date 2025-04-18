@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message for Specific Time</title>
+</head>
+<body>
+  <h1>Check Time Message</h1>
+  <p>Message: <span id="timeMessage"></span></p>
+
+  <script>
+    function checkTimeMessage() {
+      const now = new Date();
+      const currentTime = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+      const targetTime = "19:45";
+      const message = currentTime === targetTime ? "It is 19:45 now!" : "It is not 19:45.";
+      document.getElementById('timeMessage').textContent = message;
+    }
+    setInterval(checkTimeMessage, 1000); 
+    checkTimeMessage(); 
+  </script>
+</body>
+</html>

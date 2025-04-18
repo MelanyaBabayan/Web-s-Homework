@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capitalize First Letter and Color</title>
+  <style>
+    .highlight {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>Capitalize First Letter</h1>
+  <textarea id="sentenceInput" rows="4" cols="50" placeholder="Enter a sentence"></textarea>
+  <button onclick="capitalizeFirstLetterAndColor()">Format</button>
+  <p>Formatted Sentence: <span id="formattedSentence"></span></p>
+
+  <script>
+    function capitalizeFirstLetterAndColor() {
+      const sentence = document.getElementById('sentenceInput').value;
+      if (!sentence) return;
+      const formatted = `<span class="highlight">${sentence[0].toUpperCase()}</span>${sentence.slice(1)}`;
+      document.getElementById('formattedSentence').innerHTML = formatted;
+    }
+  </script>
+</body>
+</html>

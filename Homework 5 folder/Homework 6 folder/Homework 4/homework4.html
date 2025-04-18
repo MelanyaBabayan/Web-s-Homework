@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home 2</title>
+    <!-- <script src="homework2.js"></script> -->
+</head>
+<body>
+    <h1>Unique Numbers</h1>
+    <p id="random-numbers"></p>
+    <p class="result" id="total-numbers"></p>
+    <script>
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random()*(max - min + 1))+min;
+        }
+        
+        const arr=Array.from({ length: 100 }, ()=>getRandomInt(1, 1000));
+        document.getElementById("random-numbers").textContent = "Random Numbers: " + arr.join(", ");
+        
+        
+        function count_unique(arr){
+            const unique={}; 
+            let count=0; 
+            
+            for(const item of arr){
+                if(!unique[item]){
+                    unique[item]=true; 
+                    count++; 
+                }
+            }
+            return count; 
+        }
+        
+
+        document.getElementById("total-numbers").textContent = "Total Count Of Perfect Numbers: " + count_unique(arr);        
+    </script>
+    
+</body>
+</html>

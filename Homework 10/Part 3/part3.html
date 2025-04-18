@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Replace "x" with "yy"</title>
+</head>
+<body>
+  <h1>Replace Characters</h1>
+  <textarea id="textInput" rows="4" cols="50" placeholder="Enter text"></textarea>
+  <button onclick="replaceXWithYY()">Replace</button>
+  <p>Updated Text: <span id="updatedText"></span></p>
+
+  <script>
+    function replaceXWithYY() {
+      const text = document.getElementById('textInput').value;
+      const updatedText = text.replace(/x/g, 'yy');
+      document.getElementById('updatedText').textContent = updatedText;
+    }
+  </script>
+</body>
+</html>

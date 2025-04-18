@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extract Image URLs</title>
+</head>
+<body>
+    <h1>Extract Image URLs</h1>
+    <button onclick="extractImageUrls()">Show Image URLs</button>
+    <ul id="imgUrlList"></ul>
+
+    <script>
+    const mixedArray = [
+      { imgUrl: "https://www.ferra.ru/imgs/2024/05/08/05/6460496/c2150453d059e8999c5f0b211ce334f7c869147c.jpg" },
+      { otherKey: "value" },
+      { imgUrl: "https://i.pinimg.com/originals/92/43/4b/92434bfb6aedf25a74ed63330a12b318.jpg" },
+      "random text",
+      { imgUrl: "https://i.ytimg.com/vi/__92z2pK144/maxresdefault.jpg" }
+    ];
+
+    function extractImageUrls() {
+       const imgUrls = mixedArray
+        .filter(item => item.imgUrl)
+        .map(item => item.imgUrl);
+
+       const imgUrlList = document.getElementById('imgUrlList');
+       imgUrlList.innerHTML = ''; 
+       imgUrls.forEach(url => {
+        const li = document.createElement('li');
+        li.textContent = url;
+        imgUrlList.appendChild(li);
+      });
+    }
+    </script>
+</body>
+</html>

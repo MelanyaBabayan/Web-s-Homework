@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Largest String</title>
+</head>
+<body>
+  <h1>Find the Largest String</h1>
+  <p>The result will be logged to the console.</p>
+
+  <script>
+    const strings = ["apple", "banana", "cherry", "date", "grape"];
+
+    const findLargestString = () => {
+      const largestString = strings.reduce((max, current) => current.length > max.length ? current : max, "");
+      console.log(largestString);
+    };
+
+    findLargestString();
+  </script>
+</body>
+</html>

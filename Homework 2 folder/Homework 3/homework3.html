@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home 3</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        img {
+            max-width: 600px;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>City Image</h1>
+    <img id="city-image" src="" alt="City image will appear here">
+
+    <script>
+        var city = prompt("Enter a city name (e.g., Paris, New York, Berlin):");
+        var imgElement = document.getElementById("city-image");
+
+        switch (city.toLowerCase()) {
+            case "paris":
+                imgElement.src = "Img/paris.jpg";  
+                break;
+            case "sydney":
+                imgElement.src = "Img/sydney.jpg";  
+                break;
+            case "new york":
+                imgElement.src = "Img/newyork.jpg";  
+                break;
+            case "berlin":
+                imgElement.src = "Img/berlin.jpg";  
+                break;
+            case "pisa":
+                imgElement.src = "Img/pisa.jpg";  
+                break;
+            case "rome":
+                imgElement.src = "Img/rome.jpg";  
+                break;
+            case "prague":
+                imgElement.src = "Img/prague.jpg";  
+                break;
+            default:
+                imgElement.src = "Img/yerevan.jpg";  
+                break;
+        }
+    </script>
+
+</body>
+</html>
+</html>

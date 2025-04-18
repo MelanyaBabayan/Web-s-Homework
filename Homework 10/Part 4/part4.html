@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Longest and Shortest Word</title>
+</head>
+<body>
+  <h1>Longest and Shortest Word</h1>
+  <textarea id="sentence" rows="4" cols="50" placeholder="Enter a sentence"></textarea>
+  <button onclick="findLongestAndShortest()">Find</button>
+  <p>Longest Word: <span id="longestWord"></span></p>
+  <p>Shortest Word: <span id="shortestWord"></span></p>
+
+  <script>
+    function findLongestAndShortest() {
+      const sentence = document.getElementById('sentence').value.trim();
+      if (!sentence) {
+        document.getElementById('longestWord').textContent = "N/A";
+        document.getElementById('shortestWord').textContent = "N/A";
+        return;
+      }
+
+      const words = sentence.split(/\s+/); // Split by spaces
+      let longest = words[0];
+      let shortest = words[0];
+
+      words.forEach(word => {
+        if (word.length > longest.length) longest = word;
+        if (word.length < shortest.length) shortest = word;
+      });
+
+      document.getElementById('longestWord').textContent = longest;
+      document.getElementById('shortestWord').textContent = shortest;
+    }
+  </script>
+</body>
+</html>

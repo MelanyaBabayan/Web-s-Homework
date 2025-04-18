@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email and Link Extraction</title>
+</head>
+<body>
+  <h1>Extract Emails and Links</h1>
+  <p>The result will be logged to the console.</p>
+
+  <script>
+    const profiles = [
+      { email: "melanya.babayan@gmail.com", link: "https://nike.com" },
+      { email: "anna.vardanyan@yahoo.com", link: "https://adidas.com" },
+      { email: "petros.bakunc@mail.ru", link: "https://lego.com" },
+    ];
+
+    const extractEmailsAndLinks = () => {
+      const result = profiles.map(profile => ({
+        name: `${profile.email.split('@')[0]}`,
+        email: profile.email,
+        link: profile.link,
+      }));
+      console.log(result); 
+    };
+
+    extractEmailsAndLinks();
+  </script>
+</body>
+</html>

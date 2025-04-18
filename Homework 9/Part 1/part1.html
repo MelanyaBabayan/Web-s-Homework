@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extract Links</title>
+</head>
+<body>
+    <h1>Extract Links</h1>
+    <button onclick="extractLinks()">Show Links</button>
+    <ul id="linkList"></ul>
+
+    <script>
+    const mixedArray = [
+      "https://www.nike.com",
+      123,
+      "http://www.adidas.com",
+      "notalink",
+      { key: "value" },
+      "ftp://files.net"
+    ];
+
+    function extractLinks() {
+      const links = mixedArray.filter(item => typeof item === "string" && /^(https?|ftp):\/\/.+/.test(item));
+      const linkList = document.getElementById('linkList');
+      linkList.innerHTML = ''; 
+      links.forEach(link => {
+        const li = document.createElement('li');
+        li.textContent = link;
+        linkList.appendChild(li);
+      });
+    }
+    </script>
+</body>
+</html>

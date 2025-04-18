@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Data</title>
+</head>
+<body>
+  <h1>Admin Information</h1>
+  <p>Admin Details: <span id="adminDetails"></span></p>
+
+  <script>
+    const admin = {
+      username: "MelanyaBabayan04",
+      role: "superadmin",
+      email: "melanya2004@gmail.com",
+      showAdminDetails() {
+        return `Username: ${this.username}, Role: ${this.role}, Email: ${this.email}`;
+      },
+    };
+
+    document.getElementById('adminDetails').textContent = admin.showAdminDetails();
+  </script>
+</body>
+</html>
